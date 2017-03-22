@@ -21,7 +21,7 @@ module.exports = function(db) {
         secret: config.sessionSecret
     }));
 
-    require('../app/routes/user.server.routes')(app);
+
 
     app.use(express.static('./public'));
 
