@@ -4,6 +4,6 @@ var users = require('../../app/controllers/user.server.controller'),
 
 module.exports = function(app) {
 
-    app.route('/login').get(users.renderSignIn);
+    app.route('/signup').get(users.signup);
 
 };
