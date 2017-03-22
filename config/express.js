@@ -8,5 +8,22 @@ var config = require('./config.js'),
 module.exports = function(db) {
     var app = express();
 
+    app.use(bodyParser.urlencoded({
+        extended: true
+    }));
+
+    app.use(methodOverride()); //启用支持Delete和Put
+
+    //配置Session
+    app.use(session({
+        saveUninitialized: true,
+        resave: true,
+        secret: config.sessionSecret
+    }));
+
+    require('../app/routes/user.server.routes')(app);
+
+    app.use(express.static('./public'));
+
     return app;
 }

@@ -3,7 +3,7 @@ var config = require('./config'),
 
 module.exports = function() {
     var db = MongoClient.connect(config.db, function(err, db) {
-        console.log('Connected correctly to server');
+        console.log('Connected to server correctly');
     });
 
     return db;
